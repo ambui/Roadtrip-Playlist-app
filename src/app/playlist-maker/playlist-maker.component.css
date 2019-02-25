@@ -1,0 +1,72 @@
+/* font-family: 'Cormorant Garamond', serif;
+font-family: 'Proza Libre', sans-serif; */
+
+div.top {    
+    background-color: aliceblue;
+    padding: 2%;
+    text-align: center;
+    border-style: solid;
+}
+
+div.content {
+    margin-left: 3%;
+}
+
+div.details {
+    border-style: solid;
+    background-color: whitesmoke;
+    text-align: center;
+    padding:2%;
+    margin-right: 20%;
+}
+
+div.playlist {
+    position: absolute;
+    height: 75%;
+    width: 90%;
+    overflow-y: scroll; 
+}
+
+h1.title{
+    text-align: center;
+}
+
+h1.top{
+    font-size:2vw;
+}
+
+img {
+    width: 50px;
+}
+
+li { 
+    cursor: pointer; 
+}
+
+li.top {
+    margin:1px;
+    background: #41464f;
+    color:white;
+}
+
+ul.top {
+    list-style: none;
+    padding-left: 0;
+
+}
+
+li.playlist {
+    text-align: left;
+}
+
+h1 {
+    font-family: 'Proza Libre', sans-serif;
+}
+
+ul{
+    text-align: center;
+}
+
+*{
+    font-family: 'Cormorant Garamond', serif;
+}

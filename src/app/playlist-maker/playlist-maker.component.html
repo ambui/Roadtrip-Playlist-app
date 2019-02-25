@@ -1,0 +1,58 @@
+<h1 class = "title"><u>Spotify Roadtrip Playlist Creator</u></h1><br>
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-8"> <!-- Column 1: Travel Time, Playlist Result -->
+        <div> <!-- Travel Time -->
+          <h1>Travel Time</h1>
+          <div class = "content"> <!-- Travel Time Content --> 
+            <input #boxOrigin placeholder="origin">&nbsp;&nbsp;&nbsp;&nbsp; to &nbsp;&nbsp;&nbsp;&nbsp;<input #boxDest placeholder="destination">&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" (click) = 'getTravelTime(boxOrigin.value,boxDest.value)'><b>Generate PlayList</b></button><br><br>
+            <div *ngIf="undefined === travelTime"></div>
+            <div *ngIf="undefined !== travelTime"> 
+              <b>{{ travelTime }}</b>
+            </div>
+        </div>
+        <hr>
+      </div>
+      <h1>Playlist</h1><!-- Created  Source -->
+      <div class = "playlist">
+          <div *ngIf="undefined === tracklist">...</div>
+          <div *ngIf="true === tracklist">
+              <div class="spinner-border" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+          </div>
+          <div *ngIf="undefined !== tracklist && true !== tracklist">
+            <ul>
+              <li class = "playlist" *ngFor="let track of tracklist.items" [innerHTML] = "track.track.name + ' - ' + track.track.artists[0].name" 
+                (click) = "selectedContent = '<h2>'+ track.track.artists[0].name + '</h2>' + track.track.name + '<br/><img src='+ track.track.album.images[0].url +' width=\'128\'>'">
+              </li>
+            </ul>
+          </div>
+      </div>
+    </div>
+
+    <div class= "col-4"> <!-- Column2: PlayList Generation Source -->
+        <div class = "top"> <!-- Top 10 Artists -->
+          <h1 class = "top">Favorite Artists</h1>
+          <p>Creating Playlist from the following artists:</p>
+          <div *ngIf="undefined === restItems">Loading...</div>
+          <div *ngIf="undefined !== restItems">
+            <ul class = "top">
+              <li class = "top" *ngFor="let post of restItems.items" [innerHTML]="post.name"
+                (click) ="selectedContent='<div class = \'details\'><h2>'+ post.name+ '</h2>' + post.genres + '<br/><img src='+ post.images[0].url +' width=\'128\'></div>'">
+              </li>
+            </ul>
+          </div>
+        </div>        
+        <br>
+
+        <div class = "details" [innerHTML] = "selectedContent"></div>
+    </div>
+
+  </div>
+</div>
+
+
+

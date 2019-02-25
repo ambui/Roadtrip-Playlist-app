@@ -1,0 +1,15 @@
+/* font-family: 'Cormorant Garamond', serif;
+font-family: 'Proza Libre', sans-serif; */
+
+div.auth {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Proza Libre', sans-serif;
+    padding-left: 3%;
+}
+
+div.content {
+    padding-left: 6%;
+}
